@@ -14,4 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [userController::class,"welcome"]);
+Route::get('/', [userController::class,"login"]);
+Route::get("/createUser",[]);
+Route::post("/createUser",[]);
+Route::get("/createAssignment",[]);
+Route::post("/createAssignment",[]);
+Route::get("/editAssignment/{id}",[]);
+Route::put("/editAssignment",[]);
+Route::delete("/deleteAssignment",[]);
+
+
