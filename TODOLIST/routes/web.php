@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [userController::class,"login"]);
-Route::get("/createUser",[]);
-Route::post("/createUser",[]);
+Route::view('/',"home")->name("login.page");
+Route::post("/login",[userController::class,"userLogin"])->name("login.user");
+Route::view("/logado","logado")->name("home.logado");
+Route::view("/createUser","createUser")->name("create.user");
+Route::post("/createUser",[userController::class,"createUser"])->name("get.user");
 Route::get("/createAssignment",[]);
 Route::post("/createAssignment",[]);
 Route::get("/editAssignment/{id}",[]);
