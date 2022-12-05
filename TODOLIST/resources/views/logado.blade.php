@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
- <h1>Voçê esta logado</h1>
+ <h1>Seja Bem Vindo {{ $nome }}!</h1>
 </body>
 </html>
