@@ -12,8 +12,10 @@ class userController extends Controller
     {
 
     if (Auth::attempt(["nome" => $request->nome,"password"=> $request->senha])  ) {
+        session()->put("user",$request->nome);
         return redirect()->route("home.logado");
     }
+    return redirect()->route("login.page");
 }
     public function createUser(Request $request)
     {
@@ -22,9 +24,13 @@ class userController extends Controller
         $user->nome = $request->nome;
         $user->password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->save();
-        return redirect()->route("login.page");
+        session()->put("user",$request->nome);
+        return redirect()->route("home.logado");
     }
     return redirect()->route("create.user");
 }
 
+public function userLogado(){
+return view("logado",["nome" => session()->get("user")]);
+}
 }
