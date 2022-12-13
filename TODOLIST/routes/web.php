@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/',"home")->name("login.page");
 Route::post("/login",[userController::class,"userLogin"])->name("login.user");
-Route::view("/logado","logado")->name("home.logado");
+Route::get("/logado",[userController::class, "userLogado"])->name("home.logado");
 Route::view("/createUser","createUser")->name("create.user");
 Route::post("/createUser",[userController::class,"createUser"])->name("get.user");
 Route::view("/tasks","tasks", ['tasks' => taskController::getTasks()])->name("tasks.user");
