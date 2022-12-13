@@ -69,6 +69,16 @@ return [
              'driver' => 'database',
              'table' => 'users',
         ],
+
+        'tasks' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Task::class, // CRIAR TABELA
+        ],
+
+         'tasks' => [
+             'driver' => 'database',
+             'table' => 'tasks',
+        ],
     ],
 
     /*
