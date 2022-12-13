@@ -1,0 +1,29 @@
+body{
+    background-color: dodgerblue;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: blue;
+  }
+  
+nav li {
+    display: inline-block
+  }
+  
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+  
+nav li a:hover {
+    background-color: #111;
+  }

@@ -9,11 +9,16 @@
 </head>
 <body>
     
-<div>
-    <form action="{{ route("get.user") }}" method="post">
+<div class="container">
+    <form action="{{ route("get.user") }}" method="post" class="form-logon">
     @csrf
+    <p>Cadastre-se</p>
+    <label for="nome">Nome de usuário
     <input type="text" name="nome" id="">
+    </label>
+    <label for="password">Senha
     <input type="password" name="password" id="">
+    </label>
     <button type="submit">Criar</button>
     </form>
 </div>
