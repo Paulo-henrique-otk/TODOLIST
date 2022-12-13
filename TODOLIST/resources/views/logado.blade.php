@@ -8,18 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
- <h1>Voçê esta logado</h1>
- <a href="{{ route("tasks.user") }}">Criar Task</a>
-=======
     <nav>
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">TODOLIST</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Login</a></li>
-    </ul>
-    </nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">TODOLIST</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+        </nav>
+ <a href="{{ route("tasks.user") }}">Criar Task</a>
+
 
     <h1>Seja Bem Vindo {{ $nome }}!</h1>
 
