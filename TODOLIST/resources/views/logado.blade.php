@@ -8,5 +8,6 @@
 </head>
 <body>
  <h1>Voçê esta logado</h1>
+ <a href="{{ route("tasks.user") }}">Criar Task</a>
 </body>
 </html>
