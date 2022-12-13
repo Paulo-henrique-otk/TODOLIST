@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class taskController extends Controller
 {
 
-    
+
     static public function getTasks()
     {
     $task = new Task();
-    
+
     // if(isset(Auth::user()->id)) {
     //     return $task->where('id_user', Auth::user()->id)->get();
     // }
@@ -21,7 +21,7 @@ class taskController extends Controller
     return $task->get();
 
     // return redirect()->route("tasks.user");
-    
+
     }
 
     public function createTask(Request $request)
@@ -37,7 +37,7 @@ class taskController extends Controller
     }
 
     public function editTask(Request $request, $taskId)
-    {   
+    {
         $task = Task::find($taskId);
         $task->completed = $request->checked === 'true' ? 1 : 0;
         $task->update();
