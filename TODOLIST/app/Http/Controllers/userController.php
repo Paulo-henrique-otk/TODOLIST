@@ -23,8 +23,7 @@ class userController extends Controller
         $user->nome = $request->nome;
         $user->password = password_hash($request->password, PASSWORD_DEFAULT);
         $user->save();
-        session()->put("user",$user->id);
-        return redirect()->route("tasks.user");
+        return redirect()->route("login.page");
     }
     return redirect()->route("create.user");
 }

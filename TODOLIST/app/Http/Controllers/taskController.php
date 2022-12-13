@@ -16,8 +16,6 @@ class taskController extends Controller
     if(isset(Auth::user()->id)) {
         return  view("tasks",["tasks" => $task->where('id_user', Auth::user()->id)->get()]);
     }
-    return  view("tasks",["tasks" => $task->get()]);
-    // return redirect()->route("tasks.user");
 
     }
 
