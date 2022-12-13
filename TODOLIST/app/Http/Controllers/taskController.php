@@ -5,21 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 class taskController extends Controller
 {
 
 
-    static public function getTasks()
+
+     public function getTasks()
     {
     $task = new Task();
-
-    // if(isset(Auth::user()->id)) {
-    //     return $task->where('id_user', Auth::user()->id)->get();
-    // }
-
-    return $task->get();
-
+    if(isset(Auth::user()->id)) {
+        return  view("tasks",["tasks" => $task->where('id_user', Auth::user()->id)->get()]);
+    }
+    return  view("tasks",["tasks" => $task->get()]);
     // return redirect()->route("tasks.user");
 
     }
