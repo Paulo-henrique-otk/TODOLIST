@@ -15,14 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    Route::view('/',"home")->name("login.page");
-    Route::post("/login",[userController::class,"userLogin"])->name("login.user");
-    Route::view("/createUser","createUser")->name("create.user");
-    Route::post("/createUser",[userController::class,"createUser"])->name("get.user");
-    Route::get("/tasks", [ taskController::class, "getTasks"])->name("tasks.user");
-    Route::post("/createTask",[taskController::class,"createTask"])->name("post.task");
-    Route::patch("/editTask/{taskId}",[taskController::class,"editTask"])->name("patch.task");
 
+Route::view('/',"home")->name("login.page");
+Route::post("/login",[userController::class,"userLogin"])->name("login.user");
+Route::get("/logado",[userController::class, "userLogado"])->name("home.logado");
+Route::view("/createUser","createUser")->name("create.user");
+Route::post("/createUser",[userController::class,"createUser"])->name("get.user");
+Route::get("/tasks" ,[taskController::class,"getTasks"])->name("tasks.user");
+Route::post("/createTask",[taskController::class,"createTask"])->name("post.task");
+Route::patch("/editTask/{taskId}",[taskController::class,"editTask"])->name("patch.task");
+Route::delete("/deleteTask/{taskId}",[taskController::class,"deleteTask"])->name("delete.task");
 
 
 

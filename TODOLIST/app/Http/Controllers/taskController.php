@@ -38,4 +38,11 @@ class taskController extends Controller
         $task->update();
         return response('Tarefa alterada', 200)->header('Content-Type', 'text/plain');
     }
+
+    public function deleteTask(Request $request, $taskId)
+    {   
+        $task = Task::find($taskId);
+        $task->delete();
+        return redirect()->route("tasks.user");
+    }
 }
