@@ -23,6 +23,7 @@ Route::post("/createUser",[userController::class,"createUser"])->name("get.user"
 Route::view("/tasks","tasks", ['tasks' => taskController::getTasks()])->name("tasks.user");
 Route::post("/createTask",[taskController::class,"createTask"])->name("post.task");
 Route::patch("/editTask/{taskId}",[taskController::class,"editTask"])->name("patch.task");
+Route::delete("/deleteTask/{taskId}",[taskController::class,"deleteTask"])->name("delete.task");
 
 Route::get("/createAssignment",[]);
 Route::post("/createAssignment",[]);
