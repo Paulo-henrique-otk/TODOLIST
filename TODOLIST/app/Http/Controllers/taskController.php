@@ -16,7 +16,7 @@ class taskController extends Controller
     if(isset(Auth::user()->id)) {
         return  view("tasks",["tasks" => $task->where('id_user', Auth::user()->id)->get()]);
     }
-
+     return redirect()->route("login.page");
     }
 
     public function createTask(Request $request)
@@ -40,7 +40,7 @@ class taskController extends Controller
     }
 
     public function deleteTask(Request $request, $taskId)
-    {   
+    {
         $task = Task::find($taskId);
         $task->delete();
         return redirect()->route("tasks.user");
